@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>TT</title>
+    </h:head>
+    <h:body>
+        
+        <h:form>
+            <h:commandButton value="#{guncelleme.getguncelle()}"/>
+            <h:dataTable value="#{guncelleme.liste2}"  var="yaz">
+                <h:column>
+                <f:facet name="header">
+                    <h:outputLabel>ID</h:outputLabel>
+                </f:facet>
+                    <h:outputText id="ID" value="#{yaz.studentID}"/>
+                </h:column>
+                
+                <h:column>
+                <f:facet name="header">
+                <h:outputLabel>İsim</h:outputLabel>
+                </f:facet>
+                    <h:inputText value="#{yaz.name}" rendered="true" />
+                </h:column>
+                
+                <h:column>
+                <f:facet name="header">
+                    <h:outputLabel>Soyisim</h:outputLabel>
+                </f:facet>
+                    <h:inputText  value="#{yaz.surname}" rendered="true"/>
+                </h:column>
+                
+                <h:column>
+                <f:facet name="header">
+                    <h:outputLabel>Uzmanlık A.</h:outputLabel>
+                </f:facet>
+                    <h:inputText value="#{yaz.profession}" rendered="true"/>
+                </h:column>
+                
+                <h:column>
+                <f:facet name="header">
+                    <h:outputLabel>Yaş</h:outputLabel>
+                </f:facet>
+                    <h:inputText value="#{yaz.age}" rendered="true"/>
+                </h:column>
+                
+                <h:column>
+                <f:facet name="header">
+                    <h:outputLabel>URL</h:outputLabel>
+                </f:facet>
+                    <h:inputText  value="#{yaz.URL}" rendered="true"/>
+                </h:column>
+                
+                
+                <h:column> 
+                <h:commandButton value="Kaydet"  action="#{guncelleme.getkaydet()}"></h:commandButton>
+                <h:commandButton value="Sil" action="#{guncelleme.getsil()}"></h:commandButton>
+                </h:column> 
+                
+            </h:dataTable>
+             
+        </h:form>  
+             
+        
+            
+        
+        
+        
+    </h:body>
+</html>
+

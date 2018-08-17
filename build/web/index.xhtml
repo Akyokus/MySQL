@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>TT</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2" frame="1" cellpadding="3" cellspacing="5" border="2">
+            
+            <h:outputText value="Adınızı giriniz: "/>
+            <h:inputText value="#{mySQL.name}"/>
+            <h:outputText value="Soyadınızı giriniz: "/>
+            <h:inputText value="#{mySQL.surname}"/>
+            <h:outputText value="Uzmanlık alanızı giriniz: "/>
+            <h:inputText value="#{mySQL.profession}"/>
+            <h:outputText value="Yaşınızı giriniz: "/>
+            <h:inputText value="#{mySQL.age}"/>
+            <h:outputText value="Fotoğraf URL giriniz: "/>
+            <h:inputText value="#{mySQL.URL}"/>
+            </h:panelGrid>
+            <h:panelGrid columns="2" cellpadding="50" cellspacing="50">
+                
+            <h:commandButton value="KAYDET" action="#{mySQL.SendToDB}" />
+            <h:commandButton value="Listele" action="indexWrite.xhtml"/>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

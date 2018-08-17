@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>TT</title>
+        
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:dataTable value="#{writemySQL.studensTable}" var="yaz" cellspacing="15">
+              
+            <h:column>
+                <f:facet name="header">
+                    <h:outputLabel>ID</h:outputLabel>
+                </f:facet>
+                <h:outputLabel value="#{yaz.studentID}"/>
+            </h:column>  
+            <h:column>
+                <f:facet name="header">
+                    <h:outputLabel>İsim</h:outputLabel>
+                </f:facet>
+                <h:outputLabel value="#{yaz.name}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputLabel>Soyisim</h:outputLabel>
+                </f:facet>
+                <h:outputLabel value="#{yaz.surname}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputLabel>Uzmanlık Alanı</h:outputLabel>
+                </f:facet>
+                <h:outputLabel value="#{yaz.profession}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputLabel>Yaş</h:outputLabel>
+                </f:facet>
+                <h:outputLabel value="#{yaz.age}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputLabel>Fotoğraf</h:outputLabel>
+                </f:facet>
+                <p:graphicImage value="#{yaz.URL}" width="100" height="100"/>
+            </h:column>
+              <h:column>
+                  
+                  <a href="secilenGetir.xhtml?id=#{yaz.studentID}">Güncelle ve Sil</a>
+                      <h:commandButton value="Yeni Kayıt" action="index.xhtml"/>
+                  
+              </h:column>
+        </h:dataTable>
+            
+            </h:form>
+    </h:body>
+</html>
+
